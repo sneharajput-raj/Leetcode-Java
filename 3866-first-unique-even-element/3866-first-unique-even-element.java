@@ -1,6 +1,6 @@
 class Solution {
     public int firstUniqueEven(int[] nums) {
-        Map<Integer, Integer> map = new LinkedHashMap<>();
+        Map<Integer, Integer> map = new LinkedHashMap<>();  //order maintain krna (HashMap se error ayegi)
         for(int ele : nums){
             map.put(ele, map.getOrDefault(ele, 0) +1);
         }

@@ -8,7 +8,7 @@ class Solution {
                 xor = xor ^ nums2[i];
             }
         }
-        if(m % 2 != 0){
+       if(m % 2 != 0){
             for(int i=0; i<n; i++){
                 xor = xor ^ nums1[i];
             }
@@ -16,4 +16,3 @@ class Solution {
         return xor;
     }
 }
-//T.C. = O(N)

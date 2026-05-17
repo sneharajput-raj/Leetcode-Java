@@ -6,8 +6,8 @@ class Solution {
         int high = n-1;
         while(low < high){
             if(numbers[low] + numbers[high] == target){
-                ans[0] = low + 1;      //index + 1
-                ans[1] = high + 1;
+                ans[0] = low +1;     //index + 1 --> position 
+                ans[1] = high +1;
                 return ans;
             }
             else if(numbers[low] + numbers[high] > target){

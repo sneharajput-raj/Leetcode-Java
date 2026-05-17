@@ -11,9 +11,7 @@ class Solution {
         }
         for(int i=0; i<n; i++){
             if(nums[i] != max){
-                if(nums[i] > max/2){
-                    return -1;
-                }
+                if(nums[i] > max/2) return -1;
             }
         }
         return index;

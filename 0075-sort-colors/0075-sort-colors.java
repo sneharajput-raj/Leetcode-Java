@@ -9,22 +9,20 @@ class Solution {
                 j++;
             }
         }
-         for(int i=0; i<n; i++){
+        for(int i=0; i<n; i++){
             if(nums[i] == 1){
                 copy[j] = nums[i];
                 j++;
             }
         }
-         for(int i=0; i<n; i++){
+        for(int i=0; i<n; i++){
             if(nums[i] == 2){
                 copy[j] = nums[i];
                 j++;
             }
         }
-         for(int i=0; i<n; i++){
-             nums[i] = copy[i];
+        for(int i=0; i<n; i++){
+           nums[i] = copy[i];
         }
     }
 }
-//T.C. =  O(n)
-//S.C. = O(n)

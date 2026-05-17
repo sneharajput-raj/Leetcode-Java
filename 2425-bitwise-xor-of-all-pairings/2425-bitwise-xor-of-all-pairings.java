@@ -3,12 +3,12 @@ class Solution {
         int n = nums1.length;
         int m = nums2.length;
         int xor = 0;
-        if(n % 2 != 0){
-            for(int i=0; i<m; i++){
-                xor = xor ^ nums2[i];
-            }
+        if(n % 2 != 0){ //odd
+           for(int i=0; i<m; i++){
+            xor = xor ^ nums2[i];
+           }
         }
-       if(m % 2 != 0){
+        if(m % 2 != 0){  //odd
             for(int i=0; i<n; i++){
                 xor = xor ^ nums1[i];
             }

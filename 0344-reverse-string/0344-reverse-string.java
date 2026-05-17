@@ -7,7 +7,7 @@ class Solution {
             copy[j] = s[i];
             j++;
         }
-        for(int i=0; i<n; i++){
+        for(int i=0; i<n; i++){   //in-place array 
             s[i] = (char)copy[i];
         }
     }

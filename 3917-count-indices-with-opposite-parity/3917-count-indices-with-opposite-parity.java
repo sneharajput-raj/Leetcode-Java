@@ -1,14 +1,14 @@
 class Solution {
     public int countParity(int i, int x, int[] nums, int n){
         int count = 0;
-        if(x % 2 == 0){
+        if(x % 2 == 0){   //nums[i] --> even
             for(int j=i+1; j<n; j++){
-                if(nums[j] % 2 != 0) count++;
+                if(nums[j] % 2 != 0) count++;   //even ke baad odd count
             }
         }
-        else{
+        else{   //nums[i] --> odd
             for(int j=i+1; j<n; j++){
-                if(nums[j] % 2 == 0) count++;
+                if(nums[j] % 2 == 0) count++;   //odd ke baad even count
             }
         }
         return count;
@@ -22,5 +22,5 @@ class Solution {
         return ans;
     }
 }
-//T.C. = O(N2)
-//S.c. = O(N)
+//T.C. = O(N square)
+//S.C. = O(N)

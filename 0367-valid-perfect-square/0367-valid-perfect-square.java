@@ -1,7 +1,14 @@
 class Solution {
     public boolean isPerfectSquare(int num) {
-        double ans = Math.sqrt(num);
-        if(ans == (int)ans) return true;
+        //binary search
+        long low = 1;
+        long high = num;
+        while(low <= high){
+            long mid = low + (high-low)/2;
+            if(mid*mid == num) return true;
+            else if(mid*mid > num)  high = mid-1;
+            else low = low+1;
+        }
         return false;
     }
 }

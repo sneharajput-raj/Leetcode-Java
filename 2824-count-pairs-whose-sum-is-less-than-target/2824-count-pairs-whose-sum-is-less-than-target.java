@@ -1,15 +1,21 @@
 class Solution {
     public int countPairs(List<Integer> nums, int target) {
         int n = nums.size();
+        Collections.sort(nums);
         int count = 0;
-        for(int i=0; i<n; i++){
-            for(int j=i+1; j<n; j++){
-                if(nums.get(i) + nums.get(j) < target){
-                    count++;
-                }
+        int low = 0;
+        int high = n-1;
+        while(low < high){
+            if(nums.get(low) + nums.get(high) < target){
+                count = count + (high - low);
+                low++;
+            }
+            else{
+                 high--;
             }
         }
+       
         return count;
     }
 }
-//T.C. = O(n2)
+//T.C. = O(n logn)

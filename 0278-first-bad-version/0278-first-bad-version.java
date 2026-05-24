@@ -7,9 +7,9 @@ public class Solution extends VersionControl {
         int high = n;
         while(low <= high){
             int mid = low + (high-low)/2;
-            if(isBadVersion(mid) == false) low = mid+1;         //false=good
-            else high = mid-1;                                  //true=bad
+            if(isBadVersion(mid) == false) low = mid+1;     //false is good version
+            else high = mid-1;                              //true is bad version
         }
-        return low;            //at last low jaha h wahi 1st bad version of
+        return low;                                         //at last low jaha hai whi 1st bad version hoga
     }
 }

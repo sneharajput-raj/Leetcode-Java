@@ -1,7 +1,7 @@
 class Solution {
     public int countPairs(List<Integer> nums, int target) {
-        int n = nums.size();     //ArrayList ki length
-        Collections.sort(nums);  //ArrayList ko Sort
+        int n = nums.size();
+        Collections.sort(nums);
         int low = 0;
         int high = n-1;
         int count = 0;
@@ -10,9 +10,7 @@ class Solution {
                 count = count + (high - low);
                 low++;
             }
-            else{
-                high--;
-            }
+            else high--;
         }
         return count;
     }

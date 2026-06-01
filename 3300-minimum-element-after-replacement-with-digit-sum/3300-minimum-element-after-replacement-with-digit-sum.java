@@ -1,21 +1,21 @@
 class Solution {
     public int digitSum(int x){
-        int sum = 0;
+        int dc = 0;
         while(x > 0){
-            sum = sum + x % 10;
+            dc = dc + x % 10;
             x = x/10;
         }
-        return sum;
+        return dc;
     }
     public int minElement(int[] nums) {
         int n = nums.length;
-        int[] ans = new int[n];
-        int min = Integer.MAX_VALUE;
+        int[] copy = new int[n];
         for(int i=0; i<n; i++){
-            int currentSum = digitSum(nums[i]);
-            if(currentSum < min){
-                min = currentSum;
-            }
+            copy[i] = digitSum(nums[i]);
+        }
+        int min = nums[0];
+        for(int i=0; i<n; i++){
+            min = Math.min(min, copy[i]);
         }
         return min;
     }

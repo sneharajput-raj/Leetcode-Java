@@ -1,19 +1,19 @@
 class Solution {
     public void rotate(int[] nums, int k) {
         int n = nums.length;
-        k = k % n; //jab 'k' jada ho 'n' se to 'k' ko range me lane ke liye
-        int[] ans = new int[n];
+        int[] copy = new int[n];
         int j = 0;
+        k = k % n;       //jab 'k' 'n' se bada ho to 'k' ko range me lane ke liye
         for(int i=n-k; i<n; i++){
-            ans[j] = nums[i];
+            copy[j] = nums[i];
             j++;
         }
         for(int i=0; i<n-k; i++){
-            ans[j] = nums[i];
+            copy[j] = nums[i];
             j++;
         }
         for(int i=0; i<n; i++){
-            nums[i] = ans[i];
+            nums[i] = copy[i];
         }
     }
 }

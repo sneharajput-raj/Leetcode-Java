@@ -4,14 +4,14 @@ class Solution {
         int[] ans = new int[n];
         int evenI = 0;
         int oddI = 1;
-        for(int num : nums){
-            if(num % 2 == 0){
-                ans[evenI] = num;
-                evenI = evenI + 2;
+        for(int ele : nums){
+            if(ele % 2 == 0){
+                ans[evenI] = ele;
+                evenI += 2;
             }
             else{
-                ans[oddI] = num;
-                oddI += 2;
+                ans[oddI] = ele;
+                oddI += 2; 
             }
         }
         return ans;

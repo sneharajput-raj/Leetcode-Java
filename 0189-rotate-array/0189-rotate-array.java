@@ -3,7 +3,7 @@ class Solution {
         int n = nums.length;
         int[] copy = new int[n];
         int j = 0;
-        k = k % n;       //jab 'k' 'n' se bada ho to 'k' ko range me lane ke liye
+        k = k%n;
         for(int i=n-k; i<n; i++){
             copy[j] = nums[i];
             j++;

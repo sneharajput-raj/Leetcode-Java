@@ -1,10 +1,11 @@
 class Solution {
     public void rotate(int[] nums, int k) {
+        //Reverseral algorithm
         int n = nums.length;
-        k = k%n;
-        reverse(nums, 0, n-1);
-        reverse(nums, 0, k-1);
-        reverse(nums, k, n-1);
+        k = k%n;    //k array size se bada hoo
+        reverse(nums, 0, n-1);  //pura array reverse
+        reverse(nums, 0, k-1);  //k elements ko reverse
+        reverse(nums, k, n-1);  //remaining elements reverse
     }
     public  void reverse(int[] nums, int start , int end){
         while(start < end){
@@ -16,3 +17,5 @@ class Solution {
         }
     }
 }
+//T.C --  O(n)
+//S.C --  O(1)

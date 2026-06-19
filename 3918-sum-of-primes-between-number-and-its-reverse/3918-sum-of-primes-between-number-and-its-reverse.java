@@ -4,25 +4,21 @@ class Solution {
         for(int i=1; i<=x; i++){
             if(x % i == 0) count++;
         }
-        if(count == 2){
-            return true;
-        }
+        if(count == 2) return true;
         return false;
     }
     public int sumOfPrimesInRange(int n) {
         int r = 0;
         int dummy = n;
-        while(n > 0){
+        while(n != 0){
             r = r*10 + n%10;
-            n=n/10;
+            n = n/10;        //n == 0
         }
-        int min = Math.min(dummy,r);
-        int max = Math.max(dummy,r);
+        int max = Math.max(dummy, r);
+        int min = Math.min(dummy, r);
         int sum = 0;
         for(int i=min; i<=max; i++){
-            if(isPrime(i)) {
-                sum += i;
-            }
+            if(isPrime(i))  sum += i;
         }
         return sum;
     }

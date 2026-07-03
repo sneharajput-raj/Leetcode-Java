@@ -1,17 +1,17 @@
 class Solution {
     public int uniquePaths(int m, int n) {
-        int[][] arr = new int[m][n];
-        for(int i=0; i<n; i++){    //i == column --> use column traversal for row 
-            arr[0][i] = 1;        //0th row fill
+       int[][] ans = new int[m][n];
+       for(int j=0; j<n; j++){
+           ans[0][j] = 1;
         }
-        for(int i=0; i<m; i++){   //i == rows    --> use row traversal for column
-            arr[i][0] = 1;        //0th column ki sari rows fill
+       for(int i=0; i<m; i++){
+           ans[i][0] = 1;
         }
-        for(int i=1; i<m; i++){      //1st row
-            for(int j=1; j<n; j++){   //all cols
-                arr[i][j] = arr[i][j-1] + arr[i-1][j];
-            }
+        for(int i=1; i<m; i++){
+          for(int j=1; j<n; j++){
+            ans[i][j] = ans[i][j-1] + ans[i-1][j];
+          }
         }
-        return arr[m-1][n-1];
+        return ans[m-1][n-1];
     }
 }

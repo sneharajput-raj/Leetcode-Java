@@ -4,8 +4,8 @@ class Solution {
         int n = arr.length;
         int lsum = 0;
         int rsum = 0;
-        int li = n-1;
         int max = Integer.MIN_VALUE;
+        int li = n-1;
         for(int i=0; i<k; i++){
             lsum = lsum + arr[i];
         }
@@ -14,7 +14,7 @@ class Solution {
             lsum = lsum - arr[i];
             rsum = rsum + arr[li];
             li--;
-            max = Math.max(max, lsum+rsum);
+            max = Math.max(max , lsum+rsum);
         }
         return max;
     }

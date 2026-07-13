@@ -2,12 +2,12 @@ class Solution {
     public int[] arrayRankTransform(int[] arr) {
         int n = arr.length;
         int rank = 1;
-        HashMap<Integer, Integer> map = new HashMap<>();
         int[] copy = new int[n];
         for(int i=0; i<n; i++){
             copy[i] = arr[i];
         }
-        Arrays.sort(copy);
+        Arrays.sort(copy);   //O(n log n)
+        Map<Integer, Integer> map = new HashMap<>();
         for(int i=0; i<n; i++){
             if(map.containsKey(copy[i]) == false){
                 map.put(copy[i] , rank++);
@@ -19,3 +19,6 @@ class Solution {
         return arr;
     }
 }
+
+//T.C.  O(n log n)
+//S.C.  O(n)

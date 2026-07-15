@@ -7,7 +7,6 @@ class Solution {
             if(map.containsKey(complement)){
                 ans[0] = map.get(complement);
                 ans[1] = i;
-                return ans;
             }
             else{
                 map.put(nums[i] , i);

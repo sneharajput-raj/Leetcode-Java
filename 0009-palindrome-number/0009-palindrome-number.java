@@ -1,5 +1,6 @@
 class Solution {
-    public boolean isPalindrome(int x) {
+    public boolean isPalindrome(int x) { 
+        //using iteration(loop)
         if(x < 0) return false;
         int dummy = x;
         int rev = 0;

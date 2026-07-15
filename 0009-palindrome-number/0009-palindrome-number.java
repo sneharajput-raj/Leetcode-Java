@@ -1,11 +1,12 @@
 class Solution {
-    public boolean reverse(int x, int rev, int dummy){
-        if(x < 0) return false;
-        if(x == 0) return rev==dummy;
-        return reverse(x/10, rev*10+x%10, dummy);
-    }
     public boolean isPalindrome(int x) {
+        if(x < 0) return false;
+        int dummy = x;
         int rev = 0;
-        return reverse(x, rev, x);
+        while(x > 0){
+            rev = rev*10 + x%10;
+            x = x/10;
+        }
+        return rev==dummy;
     }
 }

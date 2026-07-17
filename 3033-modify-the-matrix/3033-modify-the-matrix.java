@@ -1,21 +1,17 @@
 class Solution {
     public int[][] modifiedMatrix(int[][] matrix) {
-        int m = matrix.length;
-        int n = matrix[0].length;
-        int[] colMax = new int[n];
-        for(int j=0; j<n; j++){
+        int n = matrix.length;
+        int m = matrix[0].length;
+        for(int j=0; j<m; j++){
             int maxVal = Integer.MIN_VALUE;
-            for(int i=0; i<m; i++){
+            for(int i=0; i<n; i++){
                 if(matrix[i][j] > maxVal){
                     maxVal = matrix[i][j];
                 }
             }
-            colMax[j] = maxVal;
-        }
-        for(int i=0; i<m; i++){
-            for(int j=0; j<n; j++){
+            for(int i=0; i<n; i++){
                 if(matrix[i][j] == -1){
-                    matrix[i][j] = colMax[j];
+                    matrix[i][j] = maxVal;
                 }
             }
         }

@@ -5,7 +5,7 @@ class Solution {
             ans.add(curr);
             return;
         }
-        //pick LEFT
+        //pick LEFT 
         if(lc < n){
             helper(n, curr+"(", lc+1, rc, ans);
         }

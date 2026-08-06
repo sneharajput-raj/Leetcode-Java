@@ -8,7 +8,7 @@ class Solution {
         return prod;
     }
     public int smallestNumber(int n, int t) {
-        for(int i=n; i<=100; i++){
+        for(int i=n; i<= n+10; i++){  //loop stops at n+10 as at least one number in any 10 consecutive integers has digit product 0
             if(product(i) % t == 0) return i;
         }
         return 0;

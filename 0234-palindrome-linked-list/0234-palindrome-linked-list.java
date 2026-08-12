@@ -21,14 +21,14 @@ class Solution {
         int n = count(head);
         int[] arr = new int[n];
         ListNode temp = head;
-        int i = 0;     //traverse in array
+        int i = 0;
         while(temp != null){
             arr[i] = temp.val;
             i++;
             temp = temp.next;
         }
         int low = 0;
-        int high = arr.length-1;
+        int high = n-1;
         while(low < high){
             if(arr[low] != arr[high]) return false;
             low++;

@@ -10,6 +10,7 @@
  */
 class Solution {
     public ListNode sortList(ListNode head) {
+        //using arraylist
         if(head == null) return null;
         List<Integer> li = new ArrayList<>();
         ListNode temp = head;

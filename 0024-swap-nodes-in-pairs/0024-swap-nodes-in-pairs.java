@@ -20,14 +20,16 @@ class Solution {
     public ListNode swapPairs(ListNode head) {
         if(head == null || head.next == null) return head;
         int n = count(head);
-        ListNode[] arr = new ListNode[n];
+        ListNode[] arr = new ListNode[n];   //ListNode object ka array aisa bnnta hai
         ListNode temp = head;
+        //store actual node reference in the array (not just integers)
         int i = 0;
         while(temp != null){
             arr[i] = temp;
             i++;
             temp = temp.next;
         }
+        //swap adjacent node references in the array 
         for(int j=0; j<n-1; j=j+2){
             ListNode tem = arr[j];
             arr[j] = arr[j+1];
@@ -41,10 +43,11 @@ class Solution {
         // }
         // return dummy.next;
 
+        //relink original nodes according to the new arrya order
         for(int k=0; k<n-1; k++){
             arr[k].next = arr[k+1];
         }
         arr[n-1].next = null;
-        return arr[0];
+        return arr[0];   //return new head (swaped sequence ka phla node)
     }
 }

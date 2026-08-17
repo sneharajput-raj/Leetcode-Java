@@ -10,17 +10,15 @@
  */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        Set<Integer> set = new TreeSet<>();
-        while(head != null){
-            set.add(head.val);
-            head = head.next;
+        ListNode temp = head;
+        while(temp != null && temp.next != null){
+            if(temp.val == temp.next.val){
+                temp.next = temp.next.next;
+            }
+            else{
+                temp = temp.next;
+            }
         }
-        ListNode dummy = new ListNode(0);
-        ListNode ans = dummy;
-        for(int ele : set){
-            ans.next = new ListNode(ele);
-            ans = ans.next;
-        }
-        return dummy.next;
+        return head;
     }
 }

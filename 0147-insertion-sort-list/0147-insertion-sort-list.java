@@ -10,27 +10,19 @@
  */
 class Solution {
     public ListNode insertionSortList(ListNode head) {
-        ArrayList<Integer> li = new ArrayList<>();
+        if(head == null || head.next == null) return head;
+        ListNode dummy = new ListNode(0);
+
         ListNode temp = head;
         while(temp != null){
-            li.add(temp.val);
-            temp = temp.next;
-        }
-        int n = li.size();
-        for(int i=0; i<n; i++){
-            for(int j=i+1; j<n; j++){
-                if(li.get(i) > li.get(j)){
-                    int temp2 = li.get(i);
-                    li.set(i , li.get(j));
-                    li.set(j, temp2);
-                }
+            ListNode nextNode = temp.next;      //next node
+            ListNode lastNode = dummy;          //previous node
+            while(lastNode.next != null && lastNode.next.val < temp.val){
+                lastNode = lastNode.next;
             }
-        }
-        ListNode dummy = new ListNode(0);
-        ListNode dum = dummy;
-        for(int ele : li){
-            dum.next = new ListNode(ele);
-            dum = dum.next;
+            temp.next = lastNode.next;
+            lastNode.next = temp;
+            temp = nextNode;
         }
         return dummy.next;
     }

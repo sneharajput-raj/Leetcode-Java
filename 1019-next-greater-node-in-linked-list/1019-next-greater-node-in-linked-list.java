@@ -26,12 +26,11 @@ class Solution {
         return 0;
     }
     public int[] nextLargerNodes(ListNode head) {
-        ListNode temp = head;
         int n = count(head);
         int[] arr = new int[n];
         for(int i=0; i<n; i++){
-            arr[i] = temp.val;
-            temp = temp.next;
+            arr[i] = head.val;
+            head = head.next;
         }
         int[] ans = new int[n];
         for(int i=0; i<n; i++){

@@ -20,16 +20,13 @@ class Solution {
     public boolean isPalindrome(ListNode head) {
         int n = count(head);
         int[] arr = new int[n];
-        ListNode temp = head;
-        int i = 0;
-        while(temp != null){
-            arr[i] = temp.val;
-            i++;
-            temp = temp.next;
+        for(int i=0; i<n; i++){
+            arr[i] = head.val;
+            head = head.next;
         }
         int low = 0;
         int high = n-1;
-        while(low < high){
+        while(low <= high){
             if(arr[low] != arr[high]) return false;
             low++;
             high--;

@@ -1,0 +1,6 @@
+class Solution {
+    public int countCommas(int n) {
+        if(n < 1000) return 0;     //contains 0 comma
+        return n-999;    //n >= 1000
+    }
+}

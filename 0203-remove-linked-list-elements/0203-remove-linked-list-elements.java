@@ -17,9 +17,8 @@ class Solution {
     }
     public ListNode removeElements(ListNode head, int val) {
         ListNode temp = head;
-        // if(head == null || head.next == null) return head;
         while(temp != null){
-            if(temp.val != val){
+            if(temp.val != val) {
                 createLL(temp.val);
             }
             temp = temp.next;

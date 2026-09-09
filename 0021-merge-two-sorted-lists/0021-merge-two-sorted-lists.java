@@ -11,7 +11,7 @@
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ArrayList<Integer> li = new ArrayList<>();
-        ListNode temp1 = list1; 
+        ListNode temp1 = list1;
         ListNode temp2 = list2;
         while(temp1 != null){
             li.add(temp1.val);

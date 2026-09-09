@@ -10,14 +10,14 @@
  */
 class Solution {
     ListNode dummy = new ListNode(0);
-    ListNode res = dummy;
+    ListNode dum = dummy;
     public void createNewLl(int x){
-        res.next = new ListNode(x);
-        res = res.next;
+        dum.next = new ListNode(x);
+        dum = dum.next;
     }
     public ListNode oddEvenList(ListNode head) {
         if(head == null) return head;
-        ListNode temp = head;
+        ListNode temp = head;  //odd
         while(temp != null){
             createNewLl(temp.val);
             if(temp.next != null){
@@ -25,7 +25,7 @@ class Solution {
             }
             else break;
         }
-        temp = head.next;
+        temp = head.next;     //even
         while(temp != null){
             createNewLl(temp.val);
             if(temp.next != null){

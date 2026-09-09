@@ -9,7 +9,7 @@
  * }
  */
 class Solution {
-    public int count(ListNode head){
+    public int length(ListNode head){
         int c = 0;
         while(head != null){
             c++;
@@ -18,7 +18,7 @@ class Solution {
         return c;
     }
     public boolean isPalindrome(ListNode head) {
-        int n = count(head);
+        int n = length(head);
         int[] arr = new int[n];
         for(int i=0; i<n; i++){
             arr[i] = head.val;

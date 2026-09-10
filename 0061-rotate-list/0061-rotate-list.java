@@ -33,16 +33,25 @@ class Solution {
             fast = fast.next;
         }
         if(prev != null) prev.next = null;  //break the connection so [1,2,3] separates and ends with null
-        ListNode dummy = new ListNode(0);
-        ListNode dum = dummy;
-        while(slow != null){
-            dum.next = slow;
-            dum = dum.next;
+
+
+        // ListNode dummy = new ListNode(0);
+        // ListNode dum = dummy;
+        // while(slow != null){
+        //     dum.next = slow;
+        //     dum = dum.next;
+        //     slow = slow.next;
+        // }
+        // dum.next = head;
+
+        // return dummy.next;
+//dummy node ke bina bi kr skte h
+        ListNode newHead = slow;
+        while(slow.next != null) {
             slow = slow.next;
         }
-        dum.next = head;
-
-        return dummy.next;
+        slow.next = head;
+        return newHead;
     }
 }
 //T.C..   O(length)

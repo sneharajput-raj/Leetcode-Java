@@ -5,25 +5,27 @@ class Solution {
         int high = n-1;
         int firstI = -1;
         int lastI = -1;
+
         while(low <= high){
-            int mid = low + (high-low)/2;
+            int mid = low + (high - low) /2;
             if(nums[mid] == target){
                 firstI = mid;
-                high = mid -1;
+                high = mid - 1;
             }
-            else if(nums[mid] > target) high = mid-1;
+            else if(nums[mid] > target) high = mid - 1;
             else low = mid + 1;
         }
+
         low = 0;
         high = n-1;
         while(low <= high){
-            int mid = low + (high - low)/2;
+            int mid = low + (high - low) /2;
             if(nums[mid] == target){
                 lastI = mid;
                 low = mid + 1;
             }
-            else if(nums[mid] > target) high = mid - 1;
-            else low = mid + 1;
+            else if(nums[mid] < target) low = mid + 1;
+            else high = mid - 1;
         }
         int[] ans = new int[2];
         ans[0] = firstI;

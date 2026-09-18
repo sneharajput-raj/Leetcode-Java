@@ -1,9 +1,9 @@
 class Solution {
     public String longestPalindrome(String s) {
         int n = s.length();
-        String res = "";
+        String ans = "";
         for(int i=0; i<n; i++){
-            //for odd
+            //odd
             int low = i;
             int high = i;
             while(low >= 0 && high < n && s.charAt(low) == s.charAt(high)){
@@ -11,22 +11,22 @@ class Solution {
                 high++;
             }
             String curr = s.substring(low+1, high);
-            if(curr.length() > res.length()){
-                res = curr;
+            if(curr.length() > ans.length()){
+                ans = curr;
             }
 
-            //for even
+            //even
             low = i;
             high = i+1;
-            while(low >= 0 && high < n && s.charAt(low)==s.charAt(high)){
+            while(low >= 0 && high < n && s.charAt(low) == s.charAt(high)){
                 low--;
                 high++;
             }
             curr = s.substring(low+1, high);
-            if(curr.length() > res.length()){
-                res = curr;
+            if(curr.length() > ans.length()){
+                ans = curr;
             }
         }
-        return res;
+        return ans;
     }
 }

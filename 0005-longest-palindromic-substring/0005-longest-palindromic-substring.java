@@ -1,25 +1,32 @@
 class Solution {
-    private int eAC(String s, int left, int right){
-        while(left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)){
-            left--;
-            right++;
-        }
-        return right-left-1;
-    }
     public String longestPalindrome(String s) {
-        if(s == null || s.length() < 1) return "";
-        int start = 0;
-        int end = 0;
-        for(int i=0; i<s.length(); i++){
-            //EAC --> expand around center
-            int len1 = eAC(s, i, i);    //odd length
-            int len2 = eAC(s, i, i+1);   //even length
-            int len = Math.max(len1, len2);
-            if(len > end-start){
-                start = i - (len - 1)/2;
-                end = i + len/2;
+        int n = s.length();
+        String res = "";
+        for(int i=0; i<n; i++){
+            //for odd
+            int low = i;
+            int high = i;
+            while(low >= 0 && high < n && s.charAt(low) == s.charAt(high)){
+                low--;
+                high++;
+            }
+            String curr = s.substring(low+1, high);
+            if(curr.length() > res.length()){
+                res = curr;
+            }
+
+            //for even
+            low = i;
+            high = i+1;
+            while(low >= 0 && high < n && s.charAt(low)==s.charAt(high)){
+                low--;
+                high++;
+            }
+            curr = s.substring(low+1, high);
+            if(curr.length() > res.length()){
+                res = curr;
             }
         }
-        return s.substring(start, end+1);
+        return res;
     }
 }

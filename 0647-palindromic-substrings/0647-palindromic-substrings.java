@@ -10,6 +10,7 @@ class Solution {
                 low--;
                 high++;
             }
+
             low = i;
             high = i+1;
             while(low >= 0 && high < n && s.charAt(low) == s.charAt(high)){
